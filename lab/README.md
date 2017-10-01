@@ -14,8 +14,14 @@ Lab enviroment constis of the following devices :
 | NX1   | 10.0.0.220 | Cisco NX-OS   | nxosv-final.7.0.3.I7.1.ova                |
 | VM1   | 10.0.0.55  | Debian Linux  | debian-8.6.0-amd64-netinst.iso            |
 
-VM1 is running within VMware workstation on device "Desktop" (see diagram below).  The Desktop and VM1 are bridged on the same LAN with access to the gateway (10.0.0.1) for Internet access.
-
 ## Lab Diagram
 
-![Lab](https://github.com/netesc/ipspace/blob/master/lab/lab.PNG)
+![Lab](https://github.com/netesc/ipspace/blob/master/lab/lab.png)
+
+## Lab Notes
+
+- VM1 is running within VMware Workstation on device "Desktop" (see diagram above)  
+- VM1 and the Desktop are bridged on the same 10.0.0.0/24 LAN
+- VM1 has access to all devices on 10.0.0.0/24
+- VM1 has access to the Internet via gateway 10.0.0.1
+- VM1 is running ansible version 2.4.0
