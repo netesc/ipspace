@@ -4,7 +4,7 @@ This lab was built using the [EVE-NG](http://www.eve-ng.net) network emulator.
 
 ## Lab Devices
 
-Lab enviroment constis of the following devices :
+Lab environment consists of the following devices :
 
 | Name  | IP         | OS            | Image                                     | 
 | ----  | ---------- | ------------- | ----------------------------------------- |
@@ -24,4 +24,4 @@ Lab enviroment constis of the following devices :
 - VM1 and the Desktop are bridged on the same 10.0.0.0/24 LAN
 - VM1 has access to all devices on 10.0.0.0/24
 - VM1 has access to the Internet via gateway 10.0.0.1
-- VM1 is running ansible version 2.4.0
+- VM1 is running Ansible version 2.4.0
