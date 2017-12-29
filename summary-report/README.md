@@ -4,5 +4,5 @@ The ansible playbook arp-summary.yml gathers the arp table using the command mod
 
 ## TODO
 
-Fix formating using a template or lineinfile module instead of sed to fix linebreak formatting.
+Fix linebreak formatting using a template or lineinfile module instead of using sed within a local shell.
 
