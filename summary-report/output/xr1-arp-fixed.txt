@@ -1,0 +1,12 @@
+["-------------------------------------------------------------------------------
+0/0/CPU0
+-------------------------------------------------------------------------------
+Address         Age        Hardware Addr   State      Type  Interface
+10.0.0.1        00:00:06   6c3b.6baa.8535  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.2        00:21:32   6cb0.cebb.d69b  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.5        00:00:00   6827.3742.79fc  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.10       00:35:16   5404.a619.087a  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.55       00:03:13   000c.2954.b9d1  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.201      00:35:12   ca01.f3e0.0000  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.210      00:17:23   5000.0004.0007  Dynamic    ARPA  GigabitEthernet0/0/0/0
+10.0.0.220      -          5000.0005.0001  Interface  ARPA  GigabitEthernet0/0/0/0"]

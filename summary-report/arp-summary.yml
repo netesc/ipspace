@@ -1,0 +1,54 @@
+---
+- name: IOS show arp
+  hosts: ios
+  connection: local
+  tasks: 
+  - name: Create output directory
+    local_action: file path=output state=directory
+    run_once: true
+  - ios_command: 
+      commands: show arp
+      provider: "{{cli}}"
+    register: result
+  - name: ARP output to file
+    local_action: copy content={{result.stdout}} dest=output/{{inventory_hostname}}-arp.txt
+  - name: Fix line breaks
+    shell: /bin/sed 's/\\n/\n/g' output/{{inventory_hostname}}-arp.txt > output/{{inventory_hostname}}-arp-fixed.txt && echo >> output/{{inventory_hostname}}-arp-fixed.txt
+  - name: Email IOS ARP summary
+    shell: /bin/cat output/{{inventory_hostname}}-arp-fixed.txt | mail -s "IOS ARP Summary Report" admin@example.com
+
+- name: NXOS show arp
+  hosts: nxos
+  connection: local
+  tasks: 
+  - name: Create output directory
+    local_action: file path=output state=directory
+    run_once: true
+  - nxos_command: 
+      commands: show ip arp
+      provider: "{{cli}}"
+    register: result
+  - name: ARP output to file
+    local_action: copy content={{result.stdout}} dest=output/{{inventory_hostname}}-arp.txt
+  - name: Fix line breaks
+    shell: /bin/sed 's/\\n/\n/g' output/{{inventory_hostname}}-arp.txt > output/{{inventory_hostname}}-arp-fixed.txt && echo >> output/{{inventory_hostname}}-arp-fixed.txt
+  - name: Email NXOS ARP summary
+    shell: /bin/cat output/{{inventory_hostname}}-arp-fixed.txt | mail -s "NXOS ARP Summary Report" admin@example.com
+
+- name: IOSXR show arp
+  hosts: iosxr
+  connection: local
+  tasks: 
+  - name: Create output directory
+    local_action: file path=output state=directory
+    run_once: true
+  - iosxr_command: 
+      commands: show arp
+      provider: "{{cli}}"
+    register: result
+  - name: ARP output to file
+    local_action: copy content={{result.stdout}} dest=output/{{inventory_hostname}}-arp.txt
+  - name: Fix line breaks
+    shell: /bin/sed 's/\\n/\n/g' output/{{inventory_hostname}}-arp.txt > output/{{inventory_hostname}}-arp-fixed.txt && echo >> output/{{inventory_hostname}}-arp-fixed.txt
+  - name: Email IOSXR ARP summary
+    shell: /bin/cat output/{{inventory_hostname}}-arp-fixed.txt | mail -s "IOSXR ARP Summary Report" admin@example.com
